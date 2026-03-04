@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-provider "vault" {}
+provider "vault" {
+  skip_child_token = true
+}
 
 data "vault_kv_secret_v2" "test" {
   mount = "kv"
