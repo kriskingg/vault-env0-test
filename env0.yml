@@ -1,4 +1,7 @@
 version: 2
-
-beforeInit:
-  - run: echo $ENV0_OIDC_TOKEN
+deploy:
+  steps:
+    terraformInit:
+      before:
+        - name: show_jwt
+          run: echo $ENV0_OIDC_TOKEN
