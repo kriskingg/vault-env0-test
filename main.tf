@@ -9,13 +9,11 @@ terraform {
 
 provider "vault" {
   skip_child_token = true
-  namespace        = "test-namespace"
 }
 
 data "vault_kv_secret_v2" "test" {
   mount = "kv"
   name  = "test"
-  namespace = "test-namespace"
 }
 
 output "test_secret" {
