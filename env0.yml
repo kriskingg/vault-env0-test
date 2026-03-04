@@ -9,9 +9,3 @@ deploy:
 
         - name: check_credentials
           run: env | grep VAULT
-
-        - name: check_secret_resolution
-          run: echo $TEST_SECRET
-
-        - name: export_tf_var
-          run: echo "TF_VAR_TEST_SECRET=$TEST_SECRET" >> $ENV0_ENV
