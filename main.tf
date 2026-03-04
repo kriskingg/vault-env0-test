@@ -7,11 +7,14 @@ terraform {
   }
 }
 
-variable "TEST_SECRET" {
-  type = string
+provider "vault" {}
+
+data "vault_kv_secret_v2" "test" {
+  mount = "kv"
+  name  = "test"
 }
 
 output "test_secret" {
-  value     = var.TEST_SECRET
+  value     = data.vault_kv_secret_v2.test.data["foo"]
   sensitive = true
 }
