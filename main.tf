@@ -12,5 +12,6 @@ variable "TEST_SECRET" {
 }
 
 output "test_secret" {
-  value = var.TEST_SECRET
+  value     = var.TEST_SECRET
+  sensitive = true
 }
