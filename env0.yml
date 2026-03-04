@@ -1,7 +1,11 @@
 version: 2
+
 deploy:
   steps:
     terraformInit:
       before:
-        - name: test_vault
+        - name: vault_health_check
           run: curl -I $VAULT_ADDR/v1/sys/health
+
+        - name: check_secret_resolution
+          run: echo $TF_VAR_TEST_SECRET
