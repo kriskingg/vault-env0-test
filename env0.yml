@@ -3,5 +3,5 @@ deploy:
   steps:
     terraformInit:
       before:
-        - name: show_jwt
-          run: echo $ENV0_OIDC_TOKEN
+        - name: test_vault
+          run: curl -I $VAULT_ADDR/v1/sys/health
