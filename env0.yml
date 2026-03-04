@@ -1,0 +1,4 @@
+version: 2
+
+beforeInit:
+  - run: echo $ENV0_OIDC_TOKEN
