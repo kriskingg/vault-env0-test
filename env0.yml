@@ -14,4 +14,4 @@ deploy:
           run: echo $TEST_SECRET
 
         - name: export_tf_var
-          run: export TF_VAR_TEST_SECRET="$TEST_SECRET"
+          run: echo "TF_VAR_TEST_SECRET=$TEST_SECRET" >> $ENV0_ENV
